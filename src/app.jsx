@@ -1,13 +1,26 @@
 import React from 'react';
+import API from './API/API';
+import Photos from './components/Photos';
+
+//const apiResult = API();
 
 export default class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      photos: []
+    }; 
+  }
+
+  componentDidMount() {
+    API().then(result => this.setState({'photos': result}))
+  }
+  
   render() {
     return (
       <div>
-        <h1>It Works!</h1>
-        <p>This React project just works including <span className="redBg">module</span> local styles.</p>
-        <p>Enjoy!</p>
+        <Photos images={this.state.photos}/>
       </div>
     )
   }
-}
+};
