@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alicoding/react-webpack-babel"
+    "url": "git+https://github.com/alicoding/react-webpack-babel.git"
   },
   "author": "Ali Al Dallal",
   "license": "MIT",
@@ -21,7 +21,9 @@
     "ramda": "^0.23.0",
     "react": "15.4.2",
     "react-dom": "15.4.2",
-    "sass-loader": "^4.0.2"
+    "react-slick": "^0.14.6",
+    "sass-loader": "^4.0.2",
+    "slick-carousel": "^1.6.0"
   },
   "devDependencies": {
     "babel-core": "6.22.0",
@@ -44,5 +46,8 @@
     "webpack-cleanup-plugin": "^0.4.1",
     "webpack-dashboard": "^0.2.1",
     "webpack-dev-server": "1.16.2"
+  },
+  "bugs": {
+    "url": "https://github.com/alicoding/react-webpack-babel/issues"
   }
 }
