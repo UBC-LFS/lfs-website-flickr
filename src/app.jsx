@@ -1,6 +1,7 @@
 import React from 'react';
 import API from './API/API';
 import Photos from './components/Photos';
+import SlickSlider from './components/SlickSlider'
 
 //const apiResult = API();
 
@@ -19,8 +20,16 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <Photos images={this.state.photos}/>
+        <SlickSlider/>
       </div>
     )
   }
+  
+  /*render() {
+    return (
+      <div>
+        <Photos images={this.state.photos}/>
+      </div>
+    )
+  }*/
 };

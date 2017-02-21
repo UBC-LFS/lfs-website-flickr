@@ -14,7 +14,7 @@ const Photos = (prop) => {
     });
     console.log("photos are: ", {photos})
     
-    return (    
+    return (
       <div className="photoList">
         {photos}
       </div>
