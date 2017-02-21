@@ -1,4 +1,6 @@
-const TEST_API_CALL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c552b0c28662d4fe64cd599094a6f88a&tags=panda&format=json&nojsoncallback=1";
+const API_KEY = '74b6d18bf362b76dff862cf735bb0e1c';
+
+const TEST_API_CALL = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${API_KEY}&tags=panda&extras=description&format=json&nojsoncallback=1`;
 
 const fetchImages = () => {
   return fetch(TEST_API_CALL)
