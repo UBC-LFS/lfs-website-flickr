@@ -17,19 +17,19 @@ export default class App extends React.Component {
     API().then(result => this.setState({'photos': result}))
   }
   
-  render() {
+  /*render() {
     return (
       <div>
-        <SlickSlider/>
+        <SlickSlider images={this.state.photos}/>
       </div>
     )
-  }
+  }*/
   
-  /*render() {
+  render() {
     return (
       <div>
         <Photos images={this.state.photos}/>
       </div>
     )
-  }*/
+  }
 };

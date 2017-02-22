@@ -21,6 +21,7 @@
     "ramda": "^0.23.0",
     "react": "15.4.2",
     "react-dom": "15.4.2",
+    "react-image-gallery": "^0.7.13",
     "react-slick": "^0.14.6",
     "sass-loader": "^4.0.2",
     "slick-carousel": "^1.6.0"

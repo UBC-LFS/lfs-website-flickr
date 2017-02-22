@@ -1,27 +1,30 @@
 import React from 'react';
-import Slider from 'react-slick';
+import Slider from 'react-image-gallery';
 
-var SimpleSlider = React.createClass({
-  render: function () {
-    var settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false
-    };
-    return (
-      <Slider {...settings}>
-        <div><h3>1</h3></div>
-        <div><h3>2</h3></div>
-        <div><h3>3</h3></div>
-        <div><h3>4</h3></div>
-        <div><h3>5</h3></div>
-        <div><h3>6</h3></div>
-      </Slider>
-    );
-  }
-});
+const SimpleSlider = (prop) => {
+  console.log(prop);
+  const SliderImage = prop.children.map( img => console.log(img.props.src))
+
+
+
+  const images = [
+      {
+        original: 'http://lorempixel.com/1000/600/nature/1/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/1/',
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/2/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/2/'
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/3/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/3/'
+      }
+    ]
+    
+  return (
+    <Slider items={images} slideInterval={2000}/>
+  )
+}
 
 export default SimpleSlider;

@@ -1,5 +1,5 @@
 import React from 'react';
-// import Slider from './SlickSlider';
+import SimpleSlider from './SlickSlider';
 
 const Photos = (prop) => {
     // console.log("the prop images are: ", prop);
@@ -12,12 +12,13 @@ const Photos = (prop) => {
             );
         }
     });
-    console.log("photos are: ", {photos})
-    
+    //console.log("photos are: ", {photos})
+
+
     return (
-      <div className="photoList">
-        {photos}
-      </div>
+    
+        <SimpleSlider>{photos}</SimpleSlider>
+
     );
 
 }
