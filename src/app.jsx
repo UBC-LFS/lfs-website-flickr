@@ -14,7 +14,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    API().then(result => this.setState({'photos': result}))
+    API('_b').then(result => this.setState({'photos': result}))
   }
   
   /*render() {
