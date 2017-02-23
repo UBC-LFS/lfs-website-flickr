@@ -12,7 +12,8 @@ export default class App extends React.Component {
     this.state = {
       photos: [],
       imageOption: '_h'
-    }; 
+    };
+    this.onWindowResize = this.onWindowResize.bind(this);
   }
 
   
@@ -39,7 +40,7 @@ export default class App extends React.Component {
     {
       container_option = '_n';
     }
-    this.setState({imageOption: '_b'});
+    this.setState({imageOption: container_option});
     console.log(container_option);
   }
 
@@ -49,10 +50,14 @@ export default class App extends React.Component {
   }
   componentDidMount() {
     $(window).on('resize', this.onWindowResize);
-    API('_h').then(result => this.setState({'photos': result}));
     // window.addEventListener('resize', this.onWindowResize);
   }
-  
+
+  componentDidUpdate() {
+    API(this.state.imageOption).then(result => this.setState({'photos': result}));
+  }
+   
+
   // componentWillUnmount
   /*render() {
     return (
