@@ -12,8 +12,6 @@ const Photos = (prop) => {
             );
         }
     });
-    //console.log("photos are: ", {photos})
-
 
     return (
     
