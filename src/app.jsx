@@ -16,12 +16,7 @@ export default class App extends React.Component {
     this.onWindowResize = this.onWindowResize.bind(this);
   }
 
-  
-
   onWindowResize(newSliderSize) {
-    // $(window).on('resize',function() {
-    //   console.log('asdf');
-    // });
     let slider_container_size = $('#SliderContainer').width();
     let container_option;
     if (slider_container_size > 1600)
@@ -42,12 +37,10 @@ export default class App extends React.Component {
 
 // n, c, b, h
   componentWillMount() {
-    //this.onWindowResize();
     $(window).on('resize', this.onWindowResize);
   }
   componentDidMount() {
     this.onWindowResize();
-    // window.addEventListener('resize', this.onWindowResize);
     API(this.state.imageOption).then(result => this.setState({'photos': result}));
     
   }
@@ -55,16 +48,6 @@ export default class App extends React.Component {
   componentDidUpdate() {
     API(this.state.imageOption).then(result => this.setState({'photos': result}));
   }
-   
-
-  // componentWillUnmount
-  /*render() {
-    return (
-      <div>
-        <SlickSlider images={this.state.photos}/>
-      </div>
-    )
-  }*/
   
   render() {
     return (
