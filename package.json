@@ -7,7 +7,9 @@
     "build": "webpack --config webpack.production.config.js --progress --profile --colors",
     "start": "webpack-dev-server --progress --profile --colors",
     "lint": "eslint --ext js --ext jsx src || exit 0",
-    "dev": " webpack-dashboard -- webpack-dev-server --progress --profile --colors"
+    "dev": " webpack-dashboard -- webpack-dev-server --progress --profile --colors",
+    "test": "mocha --compilers js:babel-core/register --recursive",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,8 @@
   "license": "MIT",
   "homepage": "https://github.com/alicoding/react-webpack-babel#readme",
   "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
     "node-sass": "^4.3.0",
     "ramda": "^0.23.0",
     "react": "15.4.2",
@@ -34,9 +38,12 @@
     "babel-preset-react": "6.22.0",
     "babel-runtime": "^6.22.0",
     "css-loader": "0.26.1",
+    "eslint": "^3.16.1",
+    "eslint-plugin-react": "^6.10.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "0.9.0",
     "html-webpack-plugin": "^2.26.0",
+    "mocha": "^3.2.0",
     "postcss-loader": "^1.2.2",
     "react-hot-loader": "^3.0.0-beta.6",
     "style-loader": "0.13.1",
