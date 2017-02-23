@@ -14,9 +14,7 @@ const Photos = (prop) => {
     });
 
     return (
-    
         <SimpleSlider>{photos}</SimpleSlider>
-
     );
 
 }

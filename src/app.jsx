@@ -32,13 +32,9 @@ export default class App extends React.Component {
     {
       container_option = '_b';
     }
-    else if (slider_container_size > 800)
-    {
-      container_option = '_c';
-    }
     else
     {
-      container_option = '_n';
+      container_option = '_c';
     }
     this.setState({imageOption: container_option});
     console.log(container_option);
@@ -46,11 +42,14 @@ export default class App extends React.Component {
 
 // n, c, b, h
   componentWillMount() {
-    this.onWindowResize();
+    //this.onWindowResize();
+    $(window).on('resize', this.onWindowResize);
   }
   componentDidMount() {
-    $(window).on('resize', this.onWindowResize);
+    this.onWindowResize();
     // window.addEventListener('resize', this.onWindowResize);
+    API(this.state.imageOption).then(result => this.setState({'photos': result}));
+    
   }
 
   componentDidUpdate() {
