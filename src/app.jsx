@@ -37,7 +37,6 @@ export default class App extends React.Component {
   }
   componentDidMount() {
     this.onWindowResize();
-    API(this.state.imageOption).then(result => this.setState({'photos': result}));
     
   }
 
@@ -52,4 +51,4 @@ export default class App extends React.Component {
       </div>
     )
   }
-};
+}
