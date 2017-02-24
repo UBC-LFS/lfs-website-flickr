@@ -16,18 +16,18 @@ export default class App extends React.Component {
   onWindowResize() {
     let slider_container_size = $('#SliderContainer').width();
     let container_option = '';
-    if (slider_container_size > 1600)
-    {
-      container_option = '_h';
+    
+    switch(true) {
+      case (slider_container_size < 1024):
+        container_option = '_c';
+        break;
+      case (slider_container_size < 1600 && slider_container_size >= 1024):
+        container_option = '_b';
+        break;
+      default:
+        container_option = '_h';
     }
-    else if (slider_container_size > 1024)
-    {
-      container_option = '_b';
-    }
-    else
-    {
-      container_option = '_c';
-    }
+
     API(container_option).then(result => this.setState({photos: result, imageOption: container_option}));
     console.log(container_option);
   }
