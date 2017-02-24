@@ -1,7 +1,6 @@
 import React from 'react';
 import API from './API/API';
 import Photos from './components/Photos';
-import SlickSlider from './components/SlickSlider'
 import $ from 'jquery';
 
 export default class App extends React.Component {
@@ -14,9 +13,9 @@ export default class App extends React.Component {
     this.onWindowResize = this.onWindowResize.bind(this);
   }
 
-  onWindowResize(newSliderSize) {
+  onWindowResize() {
     let slider_container_size = $('#SliderContainer').width();
-    let container_option;
+    let container_option = '';
     if (slider_container_size > 1600)
     {
       container_option = '_h';
