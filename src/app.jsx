@@ -11,12 +11,17 @@ export default class App extends React.Component {
     super();
     this.state = {
       photos: [],
-      imageOption: '_h'
+      imageOption: ''
     };
     this.onWindowResize = this.onWindowResize.bind(this);
   }
 
+  
+
   onWindowResize(newSliderSize) {
+    // $(window).on('resize',function() {
+    //   console.log('asdf');
+    // });
     let slider_container_size = $('#SliderContainer').width();
     let container_option;
     if (slider_container_size > 1600)
@@ -31,23 +36,36 @@ export default class App extends React.Component {
     {
       container_option = '_c';
     }
-    this.setState({imageOption: container_option});
+    API(container_option).then(result => this.setState({photos: result, imageOption: container_option}));
+    // this.setState({imageOption: container_option});
     console.log(container_option);
   }
 
 // n, c, b, h
   componentWillMount() {
+    //this.onWindowResize();
     $(window).on('resize', this.onWindowResize);
   }
   componentDidMount() {
     this.onWindowResize();
+    // window.addEventListener('resize', this.onWindowResize);
     API(this.state.imageOption).then(result => this.setState({'photos': result}));
     
   }
 
-  componentDidUpdate() {
-    API(this.state.imageOption).then(result => this.setState({'photos': result}));
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('this');
+    console.log(this.state);
+    console.log('next');
+    console.log(nextState);
+    console.log('shouldComponentUpdate return')
+    console.log(this.state.imageOption !== nextState.imageOption)
+    //return true;
+    return this.state.imageOption !== nextState.imageOption;
   }
+
+   
+
   
   render() {
     return (
