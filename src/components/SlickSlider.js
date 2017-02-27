@@ -3,10 +3,10 @@ import Slider from 'react-image-gallery';
 
 const SimpleSlider = (prop) => {
 
-  const images = prop.children.map( img => ({original: img.props.src, thumbnail: ''}))
+  const setImages = prop.images.map((img) => ({original: img, thumbnail: ''}))
   
   return (
-    <Slider items={images} lazyLoad={true} slideInterval={2000}/>
+    <Slider items={setImages} lazyLoad={true} slideInterval={2000}/>
   );
 }
 

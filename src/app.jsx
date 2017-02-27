@@ -1,6 +1,6 @@
 import React from 'react';
 import API from './API/API';
-import Photos from './components/Photos';
+import SimpleSlider from './components/SlickSlider';
 import $ from 'jquery';
 
 export default class App extends React.Component {
@@ -47,7 +47,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div id="SliderContainer">
-        <Photos images={this.state.photos}/>
+        <SimpleSlider images={this.state.photos}/>
       </div>
     )
   }
