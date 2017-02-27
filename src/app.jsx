@@ -1,6 +1,6 @@
 import React from 'react';
 import API from './API/API';
-import SimpleSlider from './components/SlickSlider';
+import SimpleSlider from './components/ReactImageGallery';
 import $ from 'jquery';
 
 export default class App extends React.Component {
