@@ -27,7 +27,6 @@ export default class App extends React.Component {
       default:
         container_option = '_h';
     }
-    console.log("before");
     API(container_option).then(result => {
       let pictures = result.map((thumbnail) => {
         let thumbnailPictures = thumbnail.replace(container_option + '.jpg', '_n.jpg');
