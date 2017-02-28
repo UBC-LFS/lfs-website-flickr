@@ -3,14 +3,13 @@ import Slider from 'react-image-gallery';
 
 const SimpleSlider = (prop) => {
 
-  const setImages = prop.images.map((img) => ({original: img, thumbnail: ''}))
+  const setImages = prop.images.map((img) => {
+    return {original: img.originalPictures, thumbnail: img.thumbnailPictures};
+  })
   
   const handleImageLoad = (event) => {
-    console.log(event.target)
-    //event.target = '<img src="https://farm6.staticflickr.com/5637/30933714450_7b6b3e470b_n.jpg">'
+    console.log(event.target);
   }
-
-
 
   return (
     <Slider items={setImages} lazyLoad={true} slideInterval={2000} onImageLoad={handleImageLoad}/>

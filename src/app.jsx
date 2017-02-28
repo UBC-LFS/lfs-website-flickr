@@ -8,7 +8,6 @@ export default class App extends React.Component {
     super();
     this.state = {
       photos: [],
-      loadingPhoto: [],
       imageOption: ''
     };
     this.onWindowResize = this.onWindowResize.bind(this);
@@ -30,14 +29,13 @@ export default class App extends React.Component {
     }
     console.log("before");
     API(container_option).then(result => {
-      let thumbnailResult = result.map((thumbnail) => thumbnail.replace(container_option + '.jpg', '_n.jpg'));
-      this.setState({photos: result, loadingPhoto: thumbnailResult, imageOption: container_option});
+      let pictures = result.map((thumbnail) => {
+        let thumbnailPictures = thumbnail.replace(container_option + '.jpg', '_n.jpg');
+        let originalPictures = thumbnail;
+        return {originalPictures, thumbnailPictures};
+      });      
+      this.setState({photos: pictures, imageOption: container_option});
     });
-  }
-
-  backgroundImageInitialize() {
-    let galleryArrayLength = $('#SliderContainer .image-gallery-slide-wrapper > .image-gallery-swipe .image-gallery-slide > .image-gallery-image > img').length;
-    console.log(galleryArrayLength);
   }
 
   componentWillMount() {
@@ -45,9 +43,6 @@ export default class App extends React.Component {
   }
   componentDidMount() {
     this.onWindowResize();
-    // this.backgroundImageLoading();
-    // setTimeout(this.backgroundImageInitialize, 1000);
-    //this.onWindowResize().then(this.backgroundImageLoading()).then(this.backgroundImageInitialize());
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -55,9 +50,6 @@ export default class App extends React.Component {
   }
   
   render() {
-    // let galleryArrayLength = $('#SliderContainer .image-gallery-slide-wrapper > .image-gallery-swipe .image-gallery-slide > .image-gallery-image > img').length;
-    // console.log(galleryArrayLength);
-    //this.backgroundImageInitialize();
     return (
       <div id="SliderContainer">
         <SimpleSlider images={this.state.photos}/>
