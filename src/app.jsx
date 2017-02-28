@@ -29,7 +29,7 @@ export default class App extends React.Component {
     }
     API(container_option).then(result => {
       let pictures = result.map((thumbnail) => {
-        let thumbnailPictures = thumbnail.replace(container_option + '.jpg', '_n.jpg');
+        let thumbnailPictures = thumbnail.replace(container_option + '.jpg', '_t.jpg');
         let originalPictures = thumbnail;
         return {originalPictures, thumbnailPictures};
       });      
