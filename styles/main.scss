@@ -324,3 +324,105 @@ body {
     .image-gallery-index {
       font-size: .8em;
       padding: 5px 10px; } }
+.image-gallery-slide-wrapper:hover .image-gallery-left-nav::before {
+  opacity: 0.4;
+}
+.image-gallery-slide-wrapper:hover .image-gallery-left-nav:hover::before {
+  opacity: 1;
+}
+.image-gallery-left-nav {
+  padding: 0px;
+}
+.image-gallery-left-nav::before {
+  content: 	"\2039";
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 125px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 0px;
+  color: #fff;
+  opacity: 0.1;
+  animation: removeShiftLeft 0.4s;
+  animation-timing-function: ease-out;
+}
+.image-gallery-left-nav:hover::before
+{
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #0680a6;
+  opacity: 1;
+  animation: shiftLeft 0.4s;
+  animation-timing-function: ease-out;
+}
+@keyframes shiftLeft {
+    from {padding-left: 10px;
+    padding-right: 0px;
+    opacity: 0.4;
+    color: #fff;}
+    to{padding-left: 5px;
+    padding-right: 5px;
+    opacity: 1;
+    color: #0680a6;}
+}
+@keyframes removeShiftLeft {
+    from {padding-left: 5px;
+    padding-right: 5px;
+    opacity: 1;
+    color: #0680a6;}
+    to {padding-left: 10px;
+    padding-right: 0px;
+    opacity: 0.4;
+    color: #fff;}
+}
+.image-gallery-slide-wrapper:hover .image-gallery-right-nav::before {
+  opacity: 0.4;
+}
+.image-gallery-slide-wrapper:hover .image-gallery-right-nav:hover::before {
+  opacity: 1;
+}
+.image-gallery-right-nav {
+  padding: 0px;
+}
+.image-gallery-right-nav::before {
+  content: "\203A";
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 125px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 5px;
+  color: #fff;
+  opacity: 0.1;
+  animation: removeShiftRight 0.4s;
+  animation-timing-function: ease-out;
+}
+.image-gallery-right-nav:hover::before
+{
+  padding-left: 5px;
+  padding-right: 0px;
+  color: #0680a6;
+  opacity: 1;
+  animation: shiftRight 0.4s;
+  animation-timing-function: ease-out;
+}
+@keyframes shiftRight {
+    from {padding-left: 0px;
+    padding-right: 5px;
+    opacity: 0.4;
+    color: #fff;}
+    to{padding-left: 5px;
+    padding-right: 0px;
+    opacity: 1;
+    color: #0680a6;}
+}
+@keyframes removeShiftRight {
+    from {padding-left: 5px;
+    padding-right: 0px;
+    opacity: 1;
+    color: #0680a6;}
+    to {padding-left: 0px;
+    padding-right: 5px;
+    opacity: 0.4;
+    color: #fff;}
+}
