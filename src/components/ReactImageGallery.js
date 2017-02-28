@@ -1,11 +1,19 @@
 import React from 'react';
 import Slider from 'react-image-gallery';
 
-const SimpleSlider = (prop) => {
+const ReactImageGallery = (prop) => {
 
-  const setImages = prop.images.map((img) => {
-    return {original: img.originalPictures, thumbnail: img.thumbnailPictures};
+  const setImages = prop.images.photos.map(img => {
+    const thumb = img.slice(0,-6).concat('_t.jpg');
+    return {original: img, thumbnail: thumb};
   })
+
+  console.log(setImages)
+
+  // const setImages = prop.images.map((img) => {
+    
+  //   return {original: img.originalPictures, thumbnail: img.thumbnailPictures};
+  // })
   
   const handleImageLoad = (event) => {
     console.log(event.target);
@@ -23,4 +31,4 @@ const SimpleSlider = (prop) => {
   );
 }
 
-export default SimpleSlider;
+export default ReactImageGallery;

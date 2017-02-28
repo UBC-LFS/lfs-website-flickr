@@ -1,59 +1,45 @@
 import React from 'react';
 import API from './API/API';
-import SimpleSlider from './components/ReactImageGallery';
+import ReactImageGallery from './components/ReactImageGallery';
 import $ from 'jquery';
 
 export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      photos: [],
-      imageOption: ''
+      images: {
+          photos: []
+      }
     };
-    this.onWindowResize = this.onWindowResize.bind(this);
+    this.getPhotos = this.getPhotos.bind(this);
   }
 
-  onWindowResize() {
-    let slider_container_size = $('#SliderContainer').width();
-    let container_option = '';
-    
-    switch(true) {
-      case (slider_container_size < 1024):
-        container_option = '_c';
-        break;
-      case (slider_container_size < 1600 && slider_container_size >= 1024):
-        container_option = '_b';
-        break;
-      default:
-        container_option = '_h';
-    }
-    API(container_option).then(result => {
-      let pictures = result.map((thumbnail) => {
-        let thumbnailPictures = thumbnail.replace(container_option + '.jpg', '_t.jpg');
-        let originalPictures = thumbnail;
-        return {originalPictures, thumbnailPictures};
-      });      
-      this.setState({photos: pictures, imageOption: container_option});
+  getPhotos() {
+    const slider_container_size = $('#SliderContainer').width();
+
+    API(slider_container_size).then(result => {
+      this.setState({
+        images: {
+          photos: result
+        }
+      });
     });
   }
 
-  componentWillMount() {
-    $(window).on('resize', this.onWindowResize);
-  }
   componentDidMount() {
-    this.onWindowResize();
+    this.getPhotos();
   }
 
   shouldComponentUpdate(nextProps, nextState) {
     return this.state !== nextState;
   }
-  
+
   render() {
     return (
       <div id="SliderContainer">
-        <SimpleSlider images={this.state.photos}/>
+        <ReactImageGallery images={this.state.images} />
       </div>
     )
   }
-  
+
 }
