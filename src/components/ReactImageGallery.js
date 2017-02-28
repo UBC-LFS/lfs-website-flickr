@@ -12,7 +12,14 @@ const SimpleSlider = (prop) => {
   }
 
   return (
-    <Slider items={setImages} lazyLoad={true} slideInterval={2000} onImageLoad={handleImageLoad}/>
+    <Slider
+    items={setImages}
+    lazyLoad={true}
+    slideInterval={2000}
+    showFullscreenButton={false}
+    userBrowserFullscreen={false}
+    showPlayButton={false}
+    onImageLoad={handleImageLoad}/>
   );
 }
 
