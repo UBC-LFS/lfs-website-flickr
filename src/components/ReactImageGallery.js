@@ -3,8 +3,8 @@ import Slider from 'react-image-gallery';
 
 const ReactImageGallery = (prop) => {
 
-  const setImages = prop.images.photos.map(img => {
-    const thumb = img.slice(0,-6).concat('_t.jpg');
+  const setImages = prop.images.map(img => {
+    const thumb = img.slice(0, -6).concat('_t.jpg');
     return {original: img, thumbnail: thumb};
   })
 

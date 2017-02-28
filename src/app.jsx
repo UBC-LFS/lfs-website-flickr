@@ -7,9 +7,7 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      images: {
-          photos: []
-      }
+      photos: []
     };
     this.getPhotos = this.getPhotos.bind(this);
   }
@@ -19,11 +17,7 @@ export default class App extends React.Component {
     console.log(slider_container_size);
 
     API(slider_container_size).then(result => {
-      this.setState({
-        images: {
-          photos: result
-        }
-      });
+      this.setState({ photos: result });
     });
   }
 
@@ -38,9 +32,8 @@ export default class App extends React.Component {
   render() {
     return (
       <div id="SliderContainer">
-        <ReactImageGallery images={this.state.images} />
+        <ReactImageGallery images={this.state.photos}/>
       </div>
     )
   }
-
 }
