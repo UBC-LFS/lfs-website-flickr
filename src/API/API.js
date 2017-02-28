@@ -2,17 +2,12 @@ const API_KEY = '74b6d18bf362b76dff862cf735bb0e1c';
 const MFRE_IMAGES = `https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${API_KEY}&photoset_id=72157677186721265&format=json&nojsoncallback=1`;
 
 const fetchImages = (size) => {
-    let sizeString = 'cc'; // default
-    switch(size) {
-        case (size < 1024):
-            sizeString = '_c';
-            break;
-        case (size < 1600 && size >= 1024):
-            sizeString = '_b';
-            break;
-        default:
-            sizeString = '_c';
-    }
+    let sizeString = '_b'; //default
+
+    (size >= 1800) ? sizeString = '_h' : 
+        (size >= 1000) ? sizeString = '_b' :  
+            sizeString = '_z'
+
   return fetch(MFRE_IMAGES)
       .then( response => response.json())
       .then( json => {

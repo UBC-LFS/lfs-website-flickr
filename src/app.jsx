@@ -16,6 +16,7 @@ export default class App extends React.Component {
 
   getPhotos() {
     const slider_container_size = $('#SliderContainer').width();
+    console.log(slider_container_size);
 
     API(slider_container_size).then(result => {
       this.setState({
