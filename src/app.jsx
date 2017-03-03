@@ -21,8 +21,25 @@ export default class App extends React.Component {
     });
   }
 
+  photoResize() {
+    console.log("Photo Resize");
+    // setTimeout(function(){
+      console.log("Photo Resize 2");
+    let imageGalleryWidth = $('#SliderContainer').width();
+    
+    let imageGalleryHeight = imageGalleryWidth * 684 / 1024;
+    console.log(imageGalleryHeight);
+    $('#SliderContainer').css('height', imageGalleryHeight + "px");
+    // }, 100);
+  }
+
+  componentWillMount() {
+    $(window).on('resize', this.photoResize);
+  }
+
   componentDidMount() {
     this.getPhotos();
+    this.photoResize();
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -31,7 +48,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div id="SliderContainer">
+      <div id="SliderContainer" style={this.style}>
         <ReactImageGallery images={this.state.photos}/>
       </div>
     )

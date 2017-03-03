@@ -193,7 +193,9 @@ body {
   .image-gallery-slide.center {
     position: relative; }
   .image-gallery-slide img {
-    width: 100%; }
+    //Victor Edit Out
+    // width: 100%; 
+    }
   .image-gallery-slide .image-gallery-description {
     background: rgba(0, 0, 0, 0.4);
     bottom: 70px;
@@ -432,4 +434,42 @@ body {
     padding-right: 5px;
     opacity: 0.4;
     color: #fff;}
+}
+.image-gallery-slide .image-gallery-image {
+  text-align: center;
+}
+.image-gallery-slide.center .image-gallery-image img {
+  //width: auto;
+}
+.image-gallery
+{
+  height: inherit;
+}
+.image-gallery-content
+{
+  height: inherit;
+}
+.image-gallery-slide-wrapper
+{
+  height: inherit;
+}
+.image-gallery-swipe
+{
+  height: inherit;
+}
+.image-gallery-slides
+{
+  height: inherit;
+}
+.image-gallery-slide
+{
+  height: inherit;
+}
+.image-gallery-image
+{
+  height: inherit;
+  background-color: #ece7e7;
+}
+.image-gallery-image img{
+  height: inherit;
 }
