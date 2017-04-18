@@ -40,7 +40,7 @@ So copy
 ![API Screenshot](/README_assets/api-screenshot.png? "API.js")
 
 * Modify line 4 so that YOUR-GALLERY-NUMBER is set to PHOTOSET_ID and save file
-```
+```javascript
 const PHOTOSET_ID = 'YOUR-GALLERY-NUMBER';
 ```
 
