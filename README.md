@@ -51,7 +51,7 @@ npm run build
 
 * Once the build completes, the files will be in /public.
 To deploy to WordPress, copy the JS and CSS files into the Custom JavaScript and Custom CSS fields, and in the editor add:
-```
+```html
 <div id="app" style="margin-bottom:100px"></div>
 ```
 React will attach itself to the div with id="app"
