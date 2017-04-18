@@ -1,6 +1,8 @@
 # LFS Website Flickr Gallery
 An image slider that pulls images from any public facing Flickr gallery. Built using ReactJS. Supports mobile devices, lazy loading, and intelligently requests image size depending on the screen resolution of device. 
 
+[Live demo here](http://lfs-sbcollab.sites.olt.ubc.ca/mfre-gallery-react/)
+
 ### To create a new gallery
 
 * You'll need to have [git](https://git-scm.com/) and [node](https://nodejs.org/en/) installed in your system.
