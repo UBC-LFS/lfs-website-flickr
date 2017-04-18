@@ -1,7 +1,7 @@
 import 'whatwg-fetch';
 
 const API_KEY = '74b6d18bf362b76dff862cf735bb0e1c';
-const MFRE_IMAGES = `https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${API_KEY}&photoset_id=72157677186721265&format=json&nojsoncallback=1`;
+const MFRE_IMAGES = `https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${API_KEY}&photoset_id=72157676306915403&format=json&nojsoncallback=1`;
 
 const fetchImages = (size) => {
 	let sizeString = '_b'; //default
